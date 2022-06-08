@@ -1,0 +1,16 @@
+{
+    "-Mj6op_Uo2QOZ0XzSvTD" : {
+      "category" : "Javascript",
+      "definition" : "API stands for Application Programming Interface. An API enables two different programs to communicate with each other by making some parts of the website code available to developers. Developers can use this code, i.e. the API, to build tools and widgets that can be connected to that particular website. A classic example is the Facebook API, which enables apps like Facebook Messenger and Words with Friends.",
+      "firebaseKey" : "-Mj6op_Uo2QOZ0XzSvTD",
+      "title" : "API",
+      "uid" : "3Pex9U2lzjfFWSkFXq1BPI6YoIf2"
+    },
+    "-MjRgjntLnM2uifrlh1G" : {
+      "category" : "Tech",
+      "definition" : "Wireframes help designers to communicate to web developers how a website should be structured. A wireframe is essentially a bare-bones blueprint of the website, showing the page layout, how the content should be arranged, which interface elements and navigational systems should be included, and how all these components work together. The focus is on functionality rather than aesthetics.",
+      "firebaseKey" : "-MjRgjntLnM2uifrlh1G",
+      "title" : "Wireframe",
+      "uid" : "3Pex9U2lzjfFWSkFXq1BPI6YoIf2"
+    }
+  }

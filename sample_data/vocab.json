@@ -1,20 +1,29 @@
 {
     "-Mj6pVmvWLfhdxq_qasa" : {
-      "language" : "CSS",
+      "category" : "CSS",
       "definition" : "CSS stands for Cascading Style Sheets. It is a markup language responsible for the visual elements of a website. HTML (another markup language) is used to determine the structure and content of the webpage. Web developers will then use CSS to style this content; in other words, CSS tells the browser how the HTML elements should be displayed. CSS is used to apply colors and to determine font, text size and alignment, to name just a few.",
       "firebaseKey" : "-Mj6pVmvWLfhdxq_qasa",
-      "time" : "9/11/2021 @ 11:31 AM",
+      "time" : "6/10/2022 @ 10:36 PM",
       "title" : "CSS",
       "uid" : "WExDSKDlqhei04nyszCHmtLISvX2",
       "utcTime" : 1631413603981
     },
     "-Mj6pe2C9TnH916dl-FL" : {
-      "language" : "Javascript",
+      "category" : "Javascript",
       "definition" : "A crucial aspect of development and programming, data structures are a way of organizing and storing data for maximum efficiency—much like books in a library. Data structures make it easy to find, access, sort, insert and delete data. There are many different types of data structures, including linked lists, stacks, queues and sets.",
       "firebaseKey" : "-Mj6pe2C9TnH916dl-FL",
-      "time" : "9/11/2021 @ 11:32 AM",
+      "time" : "6/10/2022 @ 10:37 PM",
       "title" : "Data Structures",
       "uid" : "WExDSKDlqhei04nyszCHmtLISvX2",
       "utcTime" : 1631413603982
-    }
+    },
+    "-N4G3hEywOMhNCL1XpLY": {
+      "category": "JavaScript",
+      "definition": "A function in JavaScript is similar to a procedure—a set of statements that performs a task or calculates a value, but for a procedure to qualify as a function, it should take some input and return an output where there is some obvious relationship between the input and the output",
+      "title": "function",
+      "firebaseKey" : "-N4G3hEywOMhNCL1XpLY",
+      "time" :"6/10/2022 @ 10:38 PM",
+      "uid" : "WExDSKDlqhei04nyszCHmtLISvX2",
+      "utcTime" : 1631413603983
   }
+}

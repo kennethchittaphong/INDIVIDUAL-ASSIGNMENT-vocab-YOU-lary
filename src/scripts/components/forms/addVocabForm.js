@@ -1,37 +1,35 @@
 import clearDom from '../../helpers/clearDom';
 import renderToDOM from '../../helpers/renderToDom';
 
-const addVocabForm = (uid, obj = {}) => {
+const addVocabForm = (obj = {}) => {
   clearDom();
-  console.warn(uid);
+  console.warn('add vocab form ===', obj);
 
   const domString = `
-    <form id="${obj.firebaseKey ? `update-book--${obj.firebaseKey}` : 'submit-book'}" class="mb-4">
-        <div class="form-group">
-            <label for="title">Word</label>
-            <input type="text" class="form-control" id="title" aria-describedby="bookTitle" placeholder="Enter Word" value="${obj.title || ''}" required>
-        </div>
-        <div class="form-group">
-            <label for="description">Definition</label>
-            <textarea class="form-control" placeholder="Word definition" id="description" style="height: 100px">${obj.description || ''}</textarea>
-        </div>
-        <div class="form-group">
-            <label for="image">Image URL</label>
-            <input type="url" class="form-control" id="image" placeholder="Image URL" value="${obj.image || ''}" required>
-        </div>
-        <div class="form-group">
-            <label for="price">Price</label>
-            <input type="text" class="form-control" id="price" placeholder="Book Price" value="${obj.price || ''}" required>
-        </div>
-        <div class="form-group" id="select-author">
-        </div>
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="sale" ${obj.sale ? 'checked' : ''}>
-            <label class="form-check-label" for="sale">On Sale?</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit Book
-        </button>
-    </form>`;
+  <form id="submit-vocab-form" class="mb-4">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" aria-describedby="Title" placeholder="Enter a word or phrase" value="${obj.title || ''}" required>
+  </div>
+  <div class="form-group">
+    <label for="definition">Definition</label>
+    <textarea class="form-control" placeholder="Enter a definition" id="definition" style="height: 100px" required>${obj.definition || ''}</textarea>
+  </div>
+  <div class="form-group" id="select-category">
+    <label for="category">Category</label>
+    <select class="form-control form-select" id="category" required>
+      <option value="" disabled selected>${obj.category || 'Select a category'}</option>
+      <option value="CSS">CSS</option>
+      <option value="HTML">HTML</option>
+      <option value="Javascript">Javascript</option>
+      <option value="Tech">Tech</option>
+    </select>
+  </div>
+  <button type="submit"
+    id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}"
+    class="btn btn-primary">Submit
+  </button>
+</form>`;
 
   renderToDOM('#form-container', domString);
 };

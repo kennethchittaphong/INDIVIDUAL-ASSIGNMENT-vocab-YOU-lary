@@ -5,7 +5,7 @@ const dbUrl = firebaseConfig.databaseURL;
 
 // GET Vocab
 const getVocab = (uid) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/Vocab.json?orderBy=uid"&equalTo="${uid}"`)
+  axios.get(`${dbUrl}/vocab.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
@@ -46,10 +46,10 @@ const deleteVocab = (userId, firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // GET FILTERED Vocab
-const getFilteredVocab = (userId, language) => new Promise((resolve, reject) => {
+const getFilteredVocab = (userId, category) => new Promise((resolve, reject) => {
   getVocab(userId)
     .then((filteredVocabArray) => {
-      const filteredVocab = filteredVocabArray.filter((vocab) => vocab.language === language);
+      const filteredVocab = filteredVocabArray.filter((vocab) => vocab.category === category);
       resolve(filteredVocab);
     }).catch(reject);
 });
@@ -58,7 +58,7 @@ const getFilteredVocab = (userId, language) => new Promise((resolve, reject) => 
 const getSearchedVocab = (userId, string) => new Promise((resolve, reject) => {
   getVocab(userId)
     .then((filteredVocabArray) => {
-      const filteredVocab = filteredVocabArray.filter((vocab) => vocab.language.toLowerCase().includes(string) || vocab.title.toLowerCase().includes(string) || vocab.definition.toLowerCase().includes(string));
+      const filteredVocab = filteredVocabArray.filter((vocab) => vocab.category.toLowerCase().includes(string) || vocab.title.toLowerCase().includes(string) || vocab.definition.toLowerCase().includes(string));
       resolve(filteredVocab);
     }).catch(reject);
 });

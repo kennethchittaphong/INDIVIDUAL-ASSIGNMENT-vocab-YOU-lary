@@ -8,3 +8,42 @@ body {
   text-align: center;
   margin-top: 100px;
 }
+
+.card {
+  display: flex;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-content: center;
+}
+
+#form-container {
+  width: 60%;
+  margin: auto;
+  justify-content: center;
+}
+
+#vocab-container {
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+
+#filter-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  #filter--CSS,
+  #filter--HTML,
+  #filter--Javascript,
+  #filter--Tech {
+    margin: 20px 24px;
+    width: 150px;
+  }
+}

@@ -1,5 +1,4 @@
 import clearDom from '../helpers/clearDom';
-import renderToDOM from '../helpers/renderToDom';
 
 const emptyVocab = () => {
   document.querySelector('#vocab-container').innerHTML = '<h1 id="empty">No Vocab Entries</h1>';
@@ -9,11 +8,14 @@ const showVocabs = (array) => {
   clearDom();
 
   // FILTER BUTTONS
-  const domString = `
+  document.querySelector('#filter-container').innerHTML = `
     <button type="button" class="btn btn-primary" id="filter--CSS">CSS</button>
     <button type="button" class="btn btn-primary" id="filter--HTML">HTML</button>
     <button type="button" class="btn btn-primary" id="filter--Javascript">Javascript</button>
     <button type="button" class="btn btn-primary" id="filter--Tech">Tech</button>
+  `;
+
+  document.querySelector('#sort').innerHTML = `
     <div class="btn-group">
       <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="sort-btn">
         Sort by
@@ -44,8 +46,6 @@ const showVocabs = (array) => {
       `;
     });
   }
-
-  renderToDOM('#filter-container', domString);
 };
 
 export { showVocabs, emptyVocab };

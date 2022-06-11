@@ -14,11 +14,11 @@ const navEvents = (uid) => {
   });
 
   // CREATE NEW
-  document.querySelector('#search-btn').addEventListener('click', addNewVocab);
+  document.querySelector('#create-entry').addEventListener('click', addNewVocab);
 
   // SEARCH Vocab
   document.querySelector('#search-btn').addEventListener('click', () => {
-    // eslint-disable-next-line no-undef
+    const string = document.querySelector('#searchBar').value;
     getSearchedVocab(uid, string).then(showVocabs);
   });
 };

@@ -8,39 +8,40 @@ import { sortNewestToOldest, sortOldestToNewest, sortByTitle } from '../componen
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
+    // EVENT TO CREATE
     if (e.target.id === ('submit-vocab')) {
       e.preventDefault();
-      const vocalObject = {
+      const vocabObject = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
-        language: document.querySelector('#language').value,
+        category: document.querySelector('#category').value,
         time: `${getDate()} @ ${getTime()}`,
         utcTime: getUTCTime(),
         uid
       };
 
-      createVocab(vocalObject).then(showVocabs);
+      createVocab(vocabObject).then(showVocabs);
     }
 
     // EVENT TO UPDATE
     if (e.target.id.includes('edit')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleVocab(firebaseKey).then((vocalObject) => addVocabForm(vocalObject));
+      getSingleVocab(firebaseKey).then((vocabObject) => addVocabForm(vocabObject));
     }
     if (e.target.id.includes('update-vocab')) {
       e.preventDefault();
       const [, firebaseKey] = e.target.id.split('--');
-      const vocalObject = {
+      const vocabObject = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
-        language: document.querySelector('#language').value,
+        category: document.querySelector('#category').value,
         time: `${getDate()} @ ${getTime()}`,
         utcTime: getUTCTime(),
         firebaseKey,
         uid
       };
 
-      updateVocab(vocalObject).then(showVocabs);
+      updateVocab(vocabObject).then(showVocabs);
     }
 
     // EVENT TO DELETE
@@ -54,8 +55,8 @@ const domEvents = (uid) => {
 
     // EVENT TO FILTER BY LANGUAGE
     if (e.target.id.includes('filter--')) {
-      const [, language] = e.target.id.split('--');
-      getFilteredVocab(uid, language).then(showVocabs);
+      const [, category] = e.target.id.split('--');
+      getFilteredVocab(uid, category).then(showVocabs);
     }
 
     // EVENT TO SORT BY TITLE
